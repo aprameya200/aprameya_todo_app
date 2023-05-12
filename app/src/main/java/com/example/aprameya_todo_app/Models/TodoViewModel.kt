@@ -9,6 +9,14 @@ import com.example.aprameya_todo_app.Database.TodosRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * View model for todo db
+ *
+ * @constructor
+ * TODO
+ *
+ * @param application
+ */
 class TodoViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository : TodosRepository
@@ -21,14 +29,17 @@ class TodoViewModel(application: Application) : AndroidViewModel(application) {
         alltodos = repository.allTodos
     }
 
+    //delete todo
     fun deleteTodo(todo: Todo) = viewModelScope.launch(Dispatchers.IO) {
         repository.delete(todo)
     }
 
+    //insert todo
     fun insertTodo(todo: Todo) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(todo)
     }
 
+    //update todo
     fun updateTodo(todo: Todo) = viewModelScope.launch(Dispatchers.IO) {
         repository.update(todo)
     }

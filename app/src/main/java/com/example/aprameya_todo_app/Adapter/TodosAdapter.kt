@@ -130,12 +130,12 @@ class TodosAdapter(private val context: Context, val listener: TodosClickListene
      */
     inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        val todos_layout = itemView.findViewById<CardView>(R.id.card_layout)
-        val title = itemView.findViewById<TextView>(R.id.tv_title)
-        val Todo_tv = itemView.findViewById<TextView>(R.id.tv_todo)
-        val date = itemView.findViewById<TextView>(R.id.tv_date)
+        val todos_layout = itemView.findViewById<CardView>(R.id.card_layout) //card layout instance
+        val title = itemView.findViewById<TextView>(R.id.tv_title) //todo title
+        val Todo_tv = itemView.findViewById<TextView>(R.id.tv_todo) //todo bodu
+        val date = itemView.findViewById<TextView>(R.id.tv_date) //todo date
 
-        val done = itemView.findViewById<ImageButton>(R.id.done)
+        val done = itemView.findViewById<ImageButton>(R.id.done) //done button
 
     }
 

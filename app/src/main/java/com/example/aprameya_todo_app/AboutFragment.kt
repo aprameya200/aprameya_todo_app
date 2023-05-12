@@ -14,9 +14,15 @@ import android.view.ViewGroup
  */
 class AboutFragment : Fragment() {
 
+    /**
+     * fragment for whtn about is clicked
+     *
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

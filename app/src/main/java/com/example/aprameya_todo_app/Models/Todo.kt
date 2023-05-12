@@ -5,6 +5,14 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
+/**
+ * data class to create entity for todo
+ *
+ * @property id primary key id
+ * @property title title of todo
+ * @property todo body part of todo
+ * @property date date of todo added
+ */
 @Entity(tableName = "todos_table")
 data class Todo(
 

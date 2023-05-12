@@ -12,6 +12,10 @@ import com.example.aprameya_todo_app.databinding.ActivityAddTodoBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * AddTodo activity page for when add todo button is pressed
+ *
+ */
 class AddTodo : AppCompatActivity() {
 
 
@@ -21,6 +25,10 @@ class AddTodo : AppCompatActivity() {
     private lateinit var old_todo: Todo
     var isUpdate = false
 
+    /**
+     * onCreate method is called when activity loads
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,6 +44,9 @@ class AddTodo : AppCompatActivity() {
             e.printStackTrace()
         }
 
+        /**
+         * click listener for update icon to update or add todo
+         */
         binding.imgCheck.setOnClickListener{
             val title = binding.etTitle.text.toString()
             val todo_desc = binding.etTodo.text.toString()
@@ -66,6 +77,9 @@ class AddTodo : AppCompatActivity() {
             }
         }
 
+        /**
+         * back button
+         */
         binding.imgBackArrow.setOnClickListener{
             onBackPressed()
 

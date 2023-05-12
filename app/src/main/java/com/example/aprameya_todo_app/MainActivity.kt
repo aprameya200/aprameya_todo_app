@@ -20,6 +20,10 @@ import com.example.aprameya_todo_app.Models.Todo
 import com.example.aprameya_todo_app.Models.TodoViewModel
 import com.example.aprameya_todo_app.databinding.ActivityMainBinding
 
+/**
+ * main activity class
+ *
+ */
 class MainActivity : AppCompatActivity(),TodosAdapter.TodosClickListener, PopupMenu.OnMenuItemClickListener  {
 
     private lateinit var binding: ActivityMainBinding
@@ -29,6 +33,9 @@ class MainActivity : AppCompatActivity(),TodosAdapter.TodosClickListener, PopupM
     lateinit var selectedTodo : Todo
 
 
+    /**
+     * calling update todo method
+     */
     private val updateTodo = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
 
         if (result.resultCode == RESULT_OK){
@@ -41,6 +48,11 @@ class MainActivity : AppCompatActivity(),TodosAdapter.TodosClickListener, PopupM
 
     }
 
+    /**
+     * onCreate method for when todo is created
+     *
+     * @param savedInstanceState
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -74,6 +86,11 @@ class MainActivity : AppCompatActivity(),TodosAdapter.TodosClickListener, PopupM
         database = TodoDatabase.getDatabase(this)
     }
 
+    /**
+     * method containing layout manager and outputs the todo
+     * into the UI for user to interact with
+     *
+     */
     private fun initUI(){
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = StaggeredGridLayoutManager(1, LinearLayout.VERTICAL)
@@ -94,12 +111,18 @@ class MainActivity : AppCompatActivity(),TodosAdapter.TodosClickListener, PopupM
         }
 
 
+        /**
+         * add todo button listener
+         */
         binding.fbAddTodo.setOnClickListener{
 
             val intent = Intent(this,AddTodo::class.java)
             getContent.launch(intent)
         }
 
+        /**
+         * search view listener for when text is written in search bar
+         */
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextChange(newText: String?): Boolean {
@@ -118,6 +141,11 @@ class MainActivity : AppCompatActivity(),TodosAdapter.TodosClickListener, PopupM
 
     }
 
+    /**
+     * open add todo activity when todo card is clicked on screen
+     *
+     * @param todo
+     */
     override fun onItemClicked(todo: Todo) {
 
         val intent = Intent(this@MainActivity,AddTodo::class.java)
@@ -125,11 +153,22 @@ class MainActivity : AppCompatActivity(),TodosAdapter.TodosClickListener, PopupM
         updateTodo.launch(intent)
     }
 
+    /**
+     * long press listener to show delete menu when card is pressed for long time
+     *
+     * @param todo
+     * @param cardView
+     */
     override fun onLongItemClicked(todo: Todo, cardView: CardView) {
         selectedTodo = todo
         popUpDisplay(cardView)
     }
 
+    /**
+     * method to show delete menu in pop up display when card item is long pressed
+     *
+     * @param cardView
+     */
     private fun popUpDisplay(cardView: CardView){
         val popup = PopupMenu(this,cardView)
         popup.setOnMenuItemClickListener(this@MainActivity)
@@ -137,6 +176,13 @@ class MainActivity : AppCompatActivity(),TodosAdapter.TodosClickListener, PopupM
         popup.show()
     }
 
+
+    /**
+     * todo is deleted when pop up button is clicked
+     *
+     * @param item
+     * @return
+     */
     override fun onMenuItemClick(item: MenuItem?): Boolean {
        if (item?.itemId == R.id.delete_todo){
            viewModel.deleteTodo((selectedTodo))
