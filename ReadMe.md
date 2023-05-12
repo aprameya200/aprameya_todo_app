@@ -1,5 +1,8 @@
 # Aprameya Neopane 
 ## ToDo App on Android Studio
+### Note: Due to my monitor size, the gifs uploaded in readme file may seem unsually bigger. Please zoom out your browser window to see full diplay. Thank You !
+
+
 
 # Open and Scroll App functionality
 ![Open and Scroll UI](https://github.com/aprameya200/aprameya_todo_app/blob/main/gifs/open_scroll.gif)

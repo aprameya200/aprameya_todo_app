@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment
 class AboutFragment : Fragment() {
 
     /**
-     * fragment for whtn about is clicked
+     * fragment for when about is clicked
      *
      * @param savedInstanceState
      */
