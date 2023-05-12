@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Aprameya_todo_app"
         tools:targetApi="31">
         <activity
+            android:name=".AddTodo"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

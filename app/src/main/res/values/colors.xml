@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#4A4F51</color>
+    <color name="bgGrey">#C9CBFF</color>
+    <color name="cardBgYellow">#F9D949</color>
+
+
+    <color name="TodoColor1">#21A36A</color>
+    <color name="TodoColor2">#FF6200EE</color>
+    <color name="TodoColor3">#ED1150</color>
+    <color name="TodoColor4">#FF03DAC5</color>
+    <color name="TodoColor5">#8E5454</color>
+    <color name="TodoColor6">#13B1FA</color>
+    <color name="TodoColor7">#EFB710</color>
 </resources>
