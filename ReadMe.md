@@ -21,7 +21,7 @@
 
 
 # Long press Delete Todo functionality
-![Long press Todo](https://github.com/aprameya200/aprameya_todo_app/blob/main/gifs/long_press%delete.gif)
+![Long press Todo](https://github.com/aprameya200/aprameya_todo_app/blob/main/gifs/long_press_delete.gif)
 
 # Search Todo functionality
 ![search Todo](https://github.com/aprameya200/aprameya_todo_app/blob/main/gifs/search.gif)
